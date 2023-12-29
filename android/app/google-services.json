@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759871142323",
+    "project_id": "flutter-jar",
+    "storage_bucket": "flutter-jar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759871142323:android:9500f751365ae141caf3c6",
+        "android_client_info": {
+          "package_name": "dev.feichtinger.flutter_production_boilerplate_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClEAAbHhl-mUzg-510wcqPjUWigxG66nA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
