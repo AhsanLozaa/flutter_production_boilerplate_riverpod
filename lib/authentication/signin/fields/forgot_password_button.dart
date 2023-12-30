@@ -12,14 +12,14 @@ class ForgotPasswordButton extends StatelessWidget {
         //   fullscreenDialog: true,
         //   builder: (_) => const ForgotPasswordScreen(),
         // ));
-        GoRouter.of(context).go("/forgot_password");
+        GoRouter.of(context).go('/forgot_password');
       },
       child: const Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         child: Align(
           alignment: Alignment.centerRight,
           child: Text(
-            "Forgot Password?",
+            'Forgot Password?',
             style: TextStyle(
               color: Colors.blueGrey,
             ),

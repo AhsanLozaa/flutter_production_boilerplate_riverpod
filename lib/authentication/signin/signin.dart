@@ -1,15 +1,14 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/google_signin/google_signin_button.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signin/fields/button.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signin/fields/error.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signin/fields/forgot_password_button.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signup/fields/email_field.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signup/fields/password_field.dart';
-import 'package:flutter_production_boilerplate_riverpod/widgets/dividors/center_text_divider.dart';
-import 'package:flutter_production_boilerplate_riverpod/widgets/responsive_layout_widget/responsive_layout_widget.dart';
-import 'package:flutter_production_boilerplate_riverpod/widgets/under_development/under_development.dart';
+
+import '../../widgets/dividors/center_text_divider.dart';
+import '../../widgets/responsive_layout_widget/responsive_layout_widget.dart';
+import '../../widgets/under_development/under_development.dart';
+import '../google_signin/google_signin_button.dart';
+import 'fields/button.dart';
+import 'fields/email_field.dart';
+import 'fields/error.dart';
+import 'fields/forgot_password_button.dart';
+import 'fields/password_field.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -45,7 +44,7 @@ class SignIn extends StatelessWidget {
 
           // or divider
           CenterTextDivider(
-            text: "or",
+            text: 'or',
           ),
 
           GoogleSignInButton(),
@@ -107,7 +106,7 @@ class SignIn extends StatelessWidget {
         ),
       ]),
       webAndDesktop: UnderDevelopmentWidget(
-        message: "Web version  of this page is still under development",
+        message: 'Web version  of this page is still under development',
       ),
     );
   }

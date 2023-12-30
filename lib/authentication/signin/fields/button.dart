@@ -28,7 +28,7 @@ class SignInButton extends ConsumerWidget {
       //     ? () => signInController.signInWithEmailAndPassword()
       //     : null,
       child: AuthButtonStyle(
-        title: "Sign In",
+        title: 'Sign In',
         isLoading: isLoading,
       ),
     );

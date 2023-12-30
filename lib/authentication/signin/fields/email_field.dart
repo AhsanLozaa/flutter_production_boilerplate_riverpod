@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signin/controller/signin_controller.dart';
-import 'package:flutter_production_boilerplate_riverpod/widgets/text_input_field/text_input_field.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../widgets/text_input_field/text_input_field.dart';
+import '../controller/signin_controller.dart';
 
 class EmailField extends ConsumerWidget {
   const EmailField({super.key});

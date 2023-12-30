@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/signin/controller/signin_controller.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../controller/signin_controller.dart';
 
 class SignInError extends ConsumerWidget {
   const SignInError({super.key});

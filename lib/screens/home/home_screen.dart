@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/authentication/controller/authentication_controller.dart';
-import 'package:flutter_production_boilerplate_riverpod/screens/home/logout_button.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../authentication/controller/authentication_controller.dart';
+import 'logout_button.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -35,19 +36,19 @@ class HomeScreen extends ConsumerWidget {
         600; // Adjust the breakpoint as needed
 
     return AppBar(
-      title: const Text('Your App Title'),
+      title: const Text('Welcome'),
       actions: <Widget>[
-        if (isMobile)
+        if (!isMobile)
           Builder(builder: (context) {
             return IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(Icons.abc),
               onPressed: () {
                 // Add a drawer or some other mobile-specific navigation here
                 Scaffold.of(context).openDrawer();
               },
             );
           }),
-        if (!isMobile)
+        if (isMobile)
           Row(
             children: [
               NavItem(text: 'Home', onPressed: () => print('Home Pressed')),
