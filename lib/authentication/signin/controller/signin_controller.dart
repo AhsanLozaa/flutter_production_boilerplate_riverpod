@@ -49,7 +49,7 @@ class SignInController extends StateNotifier<SignInState> {
     );
   }
 
-  void signInWithEmailAndPassword() async {
+  Future<void> signInWithEmailAndPassword() async {
     if (!state.isValid) {
       return;
     }

@@ -39,12 +39,13 @@ class SignUpController extends StateNotifier<SignUpState> {
       email: email,
       isValid: Formz.validate(
         [
-          state.name,
+          // state.name,
           email,
           state.password,
         ],
       ),
       // status: FormzSubmissionStatus.inProgress,
+      status: FormzSubmissionStatus.inProgress,
     );
   }
 
@@ -53,8 +54,8 @@ class SignUpController extends StateNotifier<SignUpState> {
 
     print(Formz.validate(
       [
-        state.name,
-        state.password,
+        // state.name,
+        state.email,
         password,
       ],
     ));
