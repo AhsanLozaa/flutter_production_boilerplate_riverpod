@@ -1,8 +1,10 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_production_boilerplate_riverpod/repository/auth_repo_provider.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../repository/auth_repo_provider.dart';
+
 part 'signin_state.dart';
 
 final signInProvider =
@@ -15,9 +17,8 @@ final signInProvider =
 // );
 
 class SignInController extends StateNotifier<SignInState> {
-  final AuthenticationRepository _authenticationRepository;
-
   SignInController(this._authenticationRepository) : super(const SignInState());
+  final AuthenticationRepository _authenticationRepository;
 
   void onEmailChange(String value) {
     final email = Email.dirty(value);

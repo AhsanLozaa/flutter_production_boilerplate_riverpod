@@ -9,7 +9,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authController = ref.read(authProvider.notifier);
+    final AuthController authController = ref.read(authProvider.notifier);
     // return Scaffold(
     //   appBar: AppBar(
     //     title: const Text("Home"),
@@ -39,7 +39,7 @@ class HomeScreen extends ConsumerWidget {
       title: const Text('Welcome'),
       actions: <Widget>[
         if (!isMobile)
-          Builder(builder: (context) {
+          Builder(builder: (BuildContext context) {
             return IconButton(
               icon: const Icon(Icons.abc),
               onPressed: () {
@@ -50,7 +50,7 @@ class HomeScreen extends ConsumerWidget {
           }),
         if (isMobile)
           Row(
-            children: [
+            children: <Widget>[
               NavItem(text: 'Home', onPressed: () => print('Home Pressed')),
               NavItem(text: 'About', onPressed: () => print('About Pressed')),
               // NavItem(
