@@ -64,10 +64,9 @@ class HomeScreen extends ConsumerWidget {
 }
 
 class NavItem extends StatelessWidget {
+  const NavItem({super.key, required this.text, required this.onPressed});
   final String text;
   final Function onPressed;
-
-  NavItem({required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
