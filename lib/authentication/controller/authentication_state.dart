@@ -6,9 +6,6 @@ enum AuthenticationStatus {
 }
 
 class AuthenticationState extends Equatable {
-  final AuthenticationStatus status;
-  final AuthUser user;
-
   // default constructor
   const AuthenticationState._(
       {required this.status, this.user = AuthUser.empty});
@@ -25,6 +22,8 @@ class AuthenticationState extends Equatable {
       : this._(
           status: AuthenticationStatus.unauthenticated,
         );
+  final AuthenticationStatus status;
+  final AuthUser user;
 
   @override
   List<Object?> get props => [
