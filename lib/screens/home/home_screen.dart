@@ -1,82 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../authentication/controller/authentication_controller.dart';
-import 'logout_button.dart';
+import '../../states/bottom_nav_bar/notifier.dart';
+import '../../widgets/responsive_layout_widget/responsive_layout_widget.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final AuthController authController = ref.read(authProvider.notifier);
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text("Home"),
-    //     actions: const [],
-    //     centerTitle: true,
-    //   ),
-    //   body: Center(
-    //     child: Column(
-    //       children: [
-    //         const Text("Home Page"),
-    //         TextButton(
-    //           onPressed: () {
-    //             authController.signOut();
-    //           },
-    //           child: const Text(
-    //             "Log Out",
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
-    final bool isMobile = MediaQuery.of(context).size.width <
-        600; // Adjust the breakpoint as needed
-
-    return AppBar(
-      title: const Text('Welcome'),
-      actions: <Widget>[
-        if (!isMobile)
-          Builder(builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(Icons.abc),
-              onPressed: () {
-                // Add a drawer or some other mobile-specific navigation here
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          }),
-        if (isMobile)
-          Row(
-            children: <Widget>[
-              NavItem(text: 'Home', onPressed: () => print('Home Pressed')),
-              NavItem(text: 'About', onPressed: () => print('About Pressed')),
-              // NavItem(
-              //     text: 'Contact', onPressed: () => print('Contact Pressed')),
-              const LogoutButton(),
-            ],
-          ),
-      ],
-    );
-  }
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class NavItem extends StatelessWidget {
-  const NavItem({super.key, required this.text, required this.onPressed});
-  final String text;
-  final Function onPressed;
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  static final List<Widget> _widgetOptions = <Widget>[
+    Container(
+      color: Colors.red,
+    ),
+    Container(
+      color: Colors.green,
+    ),
+    Container(
+      color: Colors.blue,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => onPressed(),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: Colors.red,
-          fontWeight: FontWeight.bold,
+    final int navIndex = ref.watch(navProvider).index;
+    return ResponsiveLayoutWidget(
+      mobile: Scaffold(
+        body: _widgetOptions[navIndex],
+        // Bottom Navigation Bar
+        bottomNavigationBar: BottomNavigationBar(
+          landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
+          currentIndex: navIndex,
+          onTap: (int index) {
+            print(index);
+            ref.read(navProvider.notifier).onIndexChanged(index);
+          },
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search_outlined), label: 'Search'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.last_page_outlined), label: 'Final'),
+          ],
         ),
       ),
     );

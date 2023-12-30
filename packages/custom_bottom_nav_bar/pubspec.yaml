@@ -1,0 +1,4 @@
+name: custom_bottom_nav_bar
+publish_to: none
+environment:
+  sdk: ">=3.0.6 <4.0.0"

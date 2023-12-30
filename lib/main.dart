@@ -32,6 +32,15 @@ class _MyAppState extends ConsumerState<MyApp> {
     final router = ref.watch(goRouterProvider);
 
     return MaterialApp.router(
+      // theme: ThemeData(
+      //   brightness: Brightness.light,
+      //   /* light theme settings */
+      // ),
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.light,
+      //   /* dark theme settings */
+      // ),
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,
