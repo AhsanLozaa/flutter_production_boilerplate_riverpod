@@ -13,12 +13,15 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   static final List<Widget> _widgetOptions = <Widget>[
+    // Screen One
     Container(
       color: Colors.red,
     ),
+    // Screen Two
     Container(
       color: Colors.green,
     ),
+    // Screen Three
     Container(
       color: Colors.blue,
     ),
@@ -35,7 +38,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
           currentIndex: navIndex,
           onTap: (int index) {
-            print(index);
             ref.read(navProvider.notifier).onIndexChanged(index);
           },
           items: const <BottomNavigationBarItem>[
