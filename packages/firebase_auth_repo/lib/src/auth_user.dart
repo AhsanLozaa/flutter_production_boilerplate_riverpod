@@ -1,11 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 class AuthUser extends Equatable {
-  final String id;
-  final String? email;
-  final String? name;
-  final bool emailVerified;
-
   const AuthUser({
     required this.id,
     this.email,
@@ -13,12 +8,17 @@ class AuthUser extends Equatable {
     this.emailVerified = false,
   });
 
-  static const empty = AuthUser(id: '');
+  final String id;
+  final String? email;
+  final String? name;
+  final bool emailVerified;
+
+  static const AuthUser empty = AuthUser(id: '');
 
   bool get isEmpty => this == AuthUser.empty;
 
   @override
-  List<Object?> get props => [
+  List<Object?> get props => <Object?>[
         email,
         id,
         name,

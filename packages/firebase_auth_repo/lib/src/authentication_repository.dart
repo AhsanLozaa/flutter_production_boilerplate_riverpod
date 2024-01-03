@@ -3,18 +3,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class SignUpWithEmailAndPasswordFailure implements Exception {
-  final String code;
   const SignUpWithEmailAndPasswordFailure({required this.code});
+  final String code;
 }
 
 class SignInWithEmailAndPasswordFailure implements Exception {
-  final String code;
   const SignInWithEmailAndPasswordFailure({required this.code});
+  final String code;
 }
 
 class ForgotPasswordFailure implements Exception {
-  final String code;
   const ForgotPasswordFailure(this.code);
+  final String code;
 }
 
 class SignInWithGoogleFailure implements Exception {}
