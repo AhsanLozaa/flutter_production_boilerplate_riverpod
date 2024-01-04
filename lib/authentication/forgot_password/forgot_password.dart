@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_production_boilerplate_riverpod/widgets/text_input_field/text_input_field.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+import '../controller/authentication_controller.dart';
+
+class ForgotPasswordScreen extends ConsumerWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AuthController authController = ref.read(authProvider.notifier);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -15,7 +19,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextInputField(
-                hintText: "Please enter yur Email",
+                hintText: 'Please enter your email',
                 onChanged: (_) {},
               ),
               Row(
@@ -29,11 +33,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                         '/auth',
                       );
                     },
-                    child: const Text("Cancel"),
+                    child: const Text('Cancel'),
                   ),
                   TextButton(
-                    onPressed: () {},
-                    child: const Text("Request"),
+                    onPressed: () {
+                      // authController.signOut()
+                    },
+                    child: const Text('Request'),
                   ),
                 ],
               )

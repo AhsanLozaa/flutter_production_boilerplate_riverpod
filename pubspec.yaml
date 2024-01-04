@@ -45,6 +45,7 @@ dependencies:
   go_router: ^11.0.1
   loading_animation_widget: ^1.2.0+4
   equatable: ^2.0.5
+  rive: ^0.12.4
   form_validators:
     path: packages/form_validators
   authentication_repository:
@@ -73,6 +74,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/
     - assets/translations/
 
   fonts:

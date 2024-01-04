@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_production_boilerplate_riverpod/firebase_options.dart';
-import 'package:flutter_production_boilerplate_riverpod/routes/go_router_provider.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter/services.dart'; // Import the services.dart package
+
+import 'firebase_options.dart';
+import 'routes/go_router_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +48,10 @@ class _MyAppState extends ConsumerState<MyApp> {
       routerDelegate: router.routerDelegate,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: Colors.lightGreenAccent,
+        primaryColorDark: Colors.lightGreenAccent.shade700,
+        primaryColorLight: Colors.green,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreenAccent),
         useMaterial3: true,
       ),
     );
