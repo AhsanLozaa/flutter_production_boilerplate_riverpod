@@ -94,6 +94,8 @@ class AuthenticationRepository {
     } on FirebaseAuthException catch (_) {
       SignInWithGoogleFailure();
     }
+
+    return false;
   }
 
   Future<void> signOut() async {
