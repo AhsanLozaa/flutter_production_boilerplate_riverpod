@@ -1,9 +1,10 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter_production_boilerplate_riverpod/repository/auth_repo_provider.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../repository/auth_repo_provider.dart';
+
 part 'signup_state.dart';
 
 final signUpProvider =

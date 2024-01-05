@@ -18,8 +18,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   static final List<Widget> _widgetOptions = <Widget>[
-    LandingPage(),
-    LandingPage(),
+    const LandingPage(),
+    Container(
+      color: Colors.red,
+    ),
     Container(
       color: Colors.blue,
     ),
