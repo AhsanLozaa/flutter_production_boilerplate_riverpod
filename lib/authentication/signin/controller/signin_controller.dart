@@ -11,11 +11,6 @@ final signInProvider =
     StateNotifierProvider.autoDispose<SignInController, SignInState>(
         (ref) => SignInController(ref.watch(authRepoProvider)));
 
-// final signUpProvider =
-//     StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
-//   (ref) => SignUpController(ref.watch(authRepoProvider)),
-// );
-
 class SignInController extends StateNotifier<SignInState> {
   SignInController(this._authenticationRepository) : super(const SignInState());
   final AuthenticationRepository _authenticationRepository;
@@ -56,7 +51,7 @@ class SignInController extends StateNotifier<SignInState> {
     }
 
     state = state.copyWith(
-        status: FormzSubmissionStatus.inProgress, errorMessage: "");
+        status: FormzSubmissionStatus.inProgress, errorMessage: '');
     try {
       await _authenticationRepository.signInWithEmailAndPassword(
         email: state.email.value,
