@@ -18,7 +18,7 @@ final StateNotifierProvider<AuthController, AuthenticationState> authProvider =
 
 class AuthController extends StateNotifier<AuthenticationState> {
   final AuthenticationRepository _authenticationRepository;
-  late final StreamSubscription _streamSubscription;
+  // late final StreamSubscription _streamSubscription;
 
   //
   AuthController(this._authenticationRepository)
@@ -41,7 +41,7 @@ class AuthController extends StateNotifier<AuthenticationState> {
 
   @override
   void dispose() {
-    _streamSubscription.cancel();
+    // _streamSubscription.cancel();
     super.dispose();
   }
 }
